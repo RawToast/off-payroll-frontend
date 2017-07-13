@@ -26,7 +26,6 @@ private object AppDependencies {
 //  private val scalaTestVersion = "2.2.6"
   private val scalaTestVersion = "3.0.3"
   private val pegdownVersion = "1.6.0"
-  private val jacksonVersion = "2.8.8"
 
   val compile = Seq(
     ws,
@@ -37,11 +36,7 @@ private object AppDependencies {
     "uk.gov.hmrc" %% "logback-json-logger" % logbackJsonLoggerVersion,
     "uk.gov.hmrc" %% "govuk-template" % govukTemplateVersion,
     "uk.gov.hmrc" %% "play-health" % playHealthVersion,
-    "uk.gov.hmrc" %% "play-ui" % playUiVersion,
-    "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
-    "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
-    "com.fasterxml.jackson.core" % "jackson-annotations" % jacksonVersion,
-    "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion
+    "uk.gov.hmrc" %% "play-ui" % playUiVersion
   )
 
   trait TestDependencies {
@@ -57,14 +52,8 @@ private object AppDependencies {
         "org.pegdown" % "pegdown" % pegdownVersion % scope,
         "com.typesafe.play" %% "play-test" % PlayVersion.current % scope,
         "uk.gov.hmrc" %% "logback-json-logger" % logbackJsonLoggerVersion,
-        "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
-        "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
-        "com.fasterxml.jackson.core" % "jackson-annotations" % jacksonVersion,
-        "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
         "org.mockito" % "mockito-core" % "2.8.9",
         "org.scalatestplus.play" %% "scalatestplus-play" % "2.0.0" % scope
-
-
       )
     }.test
   }
